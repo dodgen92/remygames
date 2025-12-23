@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UltraRemy Live</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #0e0e10;
+            --panel: #18181b;
+            --accent: #9146FF;
+            --text: #efeff1;
+            --muted: #adadb8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background: var(--panel);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #2a2a2d;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        header span {
+            color: var(--accent);
+        }
+
+        header a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+            font-size: 14px;
+        }
+
+        header a:hover {
+            color: var(--text);
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 56px);
+        }
+
+        .video {
+            flex: 3;
+            background: black;
+        }
+
+        .chat {
+            flex: 1;
+            min-width: 340px;
+            background: var(--panel);
+            border-left: 1px solid #2a2a2d;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background: var(--panel);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid #2a2a2d;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Mobile Layout */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .chat {
+                height: 40vh;
+                min-width: unset;
+                border-left: none;
+                border-top: 1px solid #2a2a2d;
+            }
+
+            .video {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><span>UltraRemy</span> Live</h1>
+    <nav>
+        <a href="https://twitch.tv/ultraremy" target="_blank">Twitch</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Stream -->
+    <div class="video">
+        <iframe
+            src="https://player.twitch.tv/?channel=ultraremy
+            &parent=localhost
+            &parent=dodgen92.github.io"
+            allowfullscreen="true">
+        </iframe>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat">
+        <iframe
+            src="https://www.twitch.tv/embed/ultraremy/chat
+            ?parent=localhost
+            &parent=dodgen92.github.io">
+        </iframe>
+    </div>
+</div>
+
+<footer>
+    © 2025 UltraRemy • Built for Twitch •
+    <a href="https://twitch.tv/ultraremy" target="_blank">Follow</a>
+</footer>
+
+</body>
+</html>
