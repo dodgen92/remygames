@@ -22,13 +22,14 @@
             display: flex;
             height: calc(100vh - 56px);
         }
-        .stream, .game, .chat {
+        .stream, .chat, .game {
+            padding: 4px;
             border-left: 1px solid #2a2a2d;
         }
-        .stream { flex: 2; border-left: none; }
+        .stream { flex: 3; border-left: none; }
+        .chat { flex: 1.5; }
         .game { flex: 2; }
-        .chat { flex: 1; }
-        iframe { width: 100%; height: 100%; border: none; }
+        iframe { width: 100%; height: 100%; border: none; border-radius: 6px; }
         footer {
             padding: 10px;
             text-align: center;
@@ -43,8 +44,10 @@
         }
         @media (max-width: 1200px) {
             .container { flex-direction: column; height: auto; }
-            .chat, .game, .stream { border-left: none; border-top: 1px solid #2a2a2d; height: 35vh; }
-            .stream, .game { height: 50vh; }
+            .stream, .chat, .game { border-left: none; border-top: 1px solid #2a2a2d; }
+            .stream { height: 50vh; }
+            .chat { height: 35vh; }
+            .game { height: 45vh; }
         }
     </style>
 </head>
@@ -60,6 +63,11 @@
             scrolling="no">
         </iframe>
     </div>
+    <div class="chat">
+        <iframe
+            src="https://www.twitch.tv/embed/ultraremy/chat?parent=dodgen92.github.io">
+        </iframe>
+    </div>
     <div class="game">
         <iframe 
             seamless="seamless" 
@@ -67,11 +75,6 @@
             allowfullscreen="true" 
             frameborder="0" 
             src="https://zv1y2i8p.play.gamezop.com/g/Sy64_WbU">
-        </iframe>
-    </div>
-    <div class="chat">
-        <iframe
-            src="https://www.twitch.tv/embed/ultraremy/chat?parent=dodgen92.github.io">
         </iframe>
     </div>
 </div>
@@ -88,5 +91,6 @@
 
 </body>
 </html>
+
 
 
