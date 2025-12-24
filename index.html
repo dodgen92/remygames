@@ -22,8 +22,12 @@
             display: flex;
             height: calc(100vh - 56px);
         }
-        .video { flex: 3; }
-        .chat { flex: 1; border-left: 1px solid #2a2a2d; }
+        .stream, .game, .chat {
+            border-left: 1px solid #2a2a2d;
+        }
+        .stream { flex: 2; border-left: none; }
+        .game { flex: 2; }
+        .chat { flex: 1; }
         iframe { width: 100%; height: 100%; border: none; }
         footer {
             padding: 10px;
@@ -37,10 +41,10 @@
             margin-top: 6px;
             opacity: 0.85;
         }
-        @media (max-width: 900px) {
-            .container { flex-direction: column; }
-            .chat { border-left: none; border-top: 1px solid #2a2a2d; height: 35vh; }
-            .video { height: 65vh; }
+        @media (max-width: 1200px) {
+            .container { flex-direction: column; height: auto; }
+            .chat, .game, .stream { border-left: none; border-top: 1px solid #2a2a2d; height: 35vh; }
+            .stream, .game { height: 50vh; }
         }
     </style>
 </head>
@@ -49,11 +53,20 @@
 <header>UltraRemy Live</header>
 
 <div class="container">
-    <div class="video">
+    <div class="stream">
         <iframe
             src="https://player.twitch.tv/?channel=ultraremy&parent=dodgen92.github.io"
             allowfullscreen="true"
             scrolling="no">
+        </iframe>
+    </div>
+    <div class="game">
+        <iframe 
+            seamless="seamless" 
+            allowtransparency="true" 
+            allowfullscreen="true" 
+            frameborder="0" 
+            src="https://zv1y2i8p.play.gamezop.com/g/Sy64_WbU">
         </iframe>
     </div>
     <div class="chat">
@@ -66,7 +79,6 @@
 <footer>
     © 2025 UltraRemy • Built for Twitch •
     <a href="https://twitch.tv/ultraremy" style="color: #9146FF;">Follow</a>
-
     <div class="counter">
         <a href="https://guestscounter.com">
             <img src="https://guestscounter.com/count.php?c_style=18&id=1766544073" alt="Visitor Counter">
@@ -76,4 +88,5 @@
 
 </body>
 </html>
+
 
